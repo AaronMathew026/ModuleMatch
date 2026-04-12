@@ -62,15 +62,6 @@ Prerequisites: COMP15111 (Fundamentals of Computation)
 Best time to take: Year 3, after completing data science & algorithms
 ```
 
-## Project Timeline
-
-| Phase | Task | Timeline |
-|-------|------|----------|
-| 1 | Scrape Manchester CS courses → JSON | Apr 10–11 |
-| 2 | Semantic search + LLM ranking | Apr 12–13 |
-| 3 | Build Streamlit frontend | Apr 14 |
-| 4 | Deploy to Railway + Streamlit Cloud | Apr 15 |
-
 ## Getting Started
 
 *See [SETUP.md](./SETUP.md) for detailed installation & deployment instructions.*
