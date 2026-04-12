@@ -18,7 +18,7 @@ def main(mode,input=None):
         embedding("Backend/raw_csv_data/CS_Modules.csv",)
     elif mode == "semantic_search":
         print("Semantic Search")
-        pass
+        semantic_search(input)
     elif mode == "reasoning":
         print("Reasoning")
         pass
@@ -55,6 +55,18 @@ def embedding(file, test=False):
         dimensions = len(sample_embedding)
         print(f"There are {count:,} vectors with {dimensions:,} dimensions in the vector store")
 
+def semantic_search(string):
+    embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
+    vectorstore = Chroma(persist_directory=db_name, embedding_function=embeddings)
+    retriever = vectorstore.as_retriever()
+    results = retriever.invoke(string)
+    for result in results:
+        print(f"Code: {result.metadata['code']}, Title: {result.metadata['title']}, Year: {result.metadata['year']}")
+        print(f"Summary: {result.page_content}\n")
+    
+
+    pass
+
 
 if __name__ == "__main__":
-    main("semantic_search")
+    main("embedding", test=True)
