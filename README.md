@@ -62,20 +62,7 @@ Prerequisites: COMP15111 (Fundamentals of Computation)
 Best time to take: Year 3, after completing data science & algorithms
 ```
 
-## Getting Started
 
-*See [SETUP.md](./SETUP.md) for detailed installation & deployment instructions.*
-
-```bash
-# Backend
-cd backend
-pip install -r requirements.txt
-python -m uvicorn app:app --reload
-
-# Frontend
-cd frontend
-pip install -r requirements.txt
-streamlit run app.py
 ```
 
 ## Why This Matters
