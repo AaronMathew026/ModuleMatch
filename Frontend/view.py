@@ -2,6 +2,9 @@ import streamlit as st
 import json
 import requests
 import time
+import os
+
+BACKEND_URL = os.environ.get("BACKEND_URL", "http://localhost:8000")
 
 st.set_page_config(page_title="Module Match", page_icon="🎓", layout="wide")
 
@@ -77,7 +80,7 @@ if submitted:
             progress_bar.progress(67)
             
             response = requests.post(
-                "http://localhost:8000/submit-profile/",
+                f"{BACKEND_URL}/submit-profile/",
                 data=payload_data,
                 files=payload_files
             )
